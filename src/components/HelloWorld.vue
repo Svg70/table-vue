@@ -1,5 +1,8 @@
 <template>
 <div>
+            <form id="search">
+        Search <input name="query" v-model="filterKey" />
+      </form>
         <table>
         <thead>
           <tr>
@@ -38,13 +41,14 @@ export default {
           return {
             sortKey: "",
             sortOrders: sortOrders,
+
             
           };
         },
         props: {
           heroes: Array,
           columns: Array,
-          filterKey: String
+
         },
 
 
@@ -52,6 +56,7 @@ export default {
 
 
         computed: {
+
           filteredHeroes: function() {
             var sortKey = this.sortKey;
             var filterKey = this.filterKey && this.filterKey.toLowerCase();
